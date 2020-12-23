@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - uses: docker://pipelinecomponents/xmllint:edge
+      - uses: docker://potherca/pipeline-component-tests
         with:
           args: xmllint --noout --nonet --valid valid.xml
-      - uses: docker://pipelinecomponents/xmllint:edge
+      - uses: docker://potherca/pipeline-component-tests
         with:
           args: xmllint --noout --nonet --valid invalid.xml
