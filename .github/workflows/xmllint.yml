@@ -1,0 +1,19 @@
+---
+name: Pipeline Component - XML Lint
+
+on:
+  - pull_request
+  - push
+
+jobs:
+  pipeline-component:
+    name: XML Lint
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker://pipelinecomponents/xmllint:edge
+        with:
+          args: xmllint --noout --nonet --valid valid.xml
+      - uses: docker://pipelinecomponents/xmllint:edge
+        with:
+          args: xmllint --noout --nonet --valid invalid.xml
