@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE parent [
+        <!ELEMENT parent (bchildren)*>
+        <!ELEMENT bchildren (child)*>
+        <!ATTLIST bchildren
+                lang CDATA #REQUIRED>
+        <!ELEMENT child (value)*>
+        <!ATTLIST child
+                id CDATA #REQUIRED>
+        <!ELEMENT value (#PCDATA)>
+        <!ATTLIST value
+                property CDATA #REQUIRED>
+        ]>
+<parent>
+    <bchildren lang="de-CH">
+        <child id="01">
+            <value property="attribute">Foo</value>
+        </child>
+        <child id="02">
+            <value property="attribute">Bar</value>
+        </child>
+    </bchildren>
+</parent>
